@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DataSeeding.Data.EfCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -216,7 +217,18 @@ namespace DataSeeding
         static void Main(string[] args)
         {
 
-            SeedingData.Seed(new ShopContext());
+            //SeedingData.Seed(new ShopContext());
+            
+            using(var db= new NorthwindContext())
+            {
+                var products = db.Products.ToList();   //Products ları liste şeklinde alalım
+
+                foreach (var item in products)
+                {
+                    Console.WriteLine(item.ProductName);
+                }
+
+            }
 
         }
 

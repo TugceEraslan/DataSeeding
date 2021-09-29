@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataSeeding.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20210928084208_DataSeeding")]
+    [Migration("20210928125350_DataSeeding")]
     partial class DataSeeding
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
